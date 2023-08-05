@@ -16,7 +16,7 @@ def getValidStellarPublicKeyIfExists(publicKeyNoChecksum):
           continue
   return 0
 
-def generateVanityPhraseInclPublicKey(phrase):
+def generatePubKeyWithVanityPhrase(phrase):
   phrase = phrase.upper()
   if len(phrase) >= 53:
     sys.exit("Try a shorter phrase")
@@ -39,4 +39,5 @@ def generateVanityPhraseInclPublicKey(phrase):
     if PK:
       sys.exit(f"\n\tVALID:\n\t{PK}\n")
 
-generateVanityPhraseInclPublicKey("777HELLO777FROM777HAPPY777CONSOLE777")
+# Modify here #
+generatePubKeyWithVanityPhrase("777HELLO777FROM777HAPPY777CONSOLE777")

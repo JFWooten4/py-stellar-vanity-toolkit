@@ -1,5 +1,4 @@
-from stellar_sdk import Keypair
-from stellar_sdk import exceptions
+from stellar_sdk import Keypair, exceptions
 import base64, binascii, random, string, sys
 
 def getValidStellarPublicKeyIfExists(publicKeyNoChecksum):
@@ -16,11 +15,11 @@ def getValidStellarPublicKeyIfExists(publicKeyNoChecksum):
           continue
   return 0
 
-def generatePubKeyWithVanityPhrase(phrase):
-  phrase = phrase.upper()
+def generatePubKeyWithVanityPhrase():
+  phrase = input("Enter the desired vanity phrase: ").upper()
   if len(phrase) >= 53:
     sys.exit("Try a shorter phrase")
-  try: 
+  try:
     padding = "=" * (8 - len(phrase) % 8)
     base64.b32decode(phrase + padding)
   except (TypeError, binascii.Error):
@@ -39,5 +38,4 @@ def generatePubKeyWithVanityPhrase(phrase):
     if PK:
       sys.exit(f"\n\tVALID:\n\t{PK}\n")
 
-# Modify here #
-generatePubKeyWithVanityPhrase("777HELLO777FROM777HAPPY777CONSOLE777")
+generatePubKeyWithVanityPhrase()

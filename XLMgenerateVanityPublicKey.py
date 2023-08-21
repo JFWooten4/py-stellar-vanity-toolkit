@@ -23,7 +23,7 @@ def generatePubKeyWithVanityPhrase():
     padding = "=" * (8 - len(phrase) % 8)
     base64.b32decode(phrase + padding)
   except (TypeError, binascii.Error):
-    sys.exit("Try a base32 phrase")
+    sys.exit("Try a base32 phrase (shorter if in B32)")
   while True:
     publicKey = Keypair.random().public_key
     PKnoChecksum = publicKey[:-3]

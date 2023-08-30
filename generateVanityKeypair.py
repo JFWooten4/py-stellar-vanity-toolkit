@@ -22,7 +22,7 @@ def main():
       result = f"""\n
       \tKeypair found in {n} attempts:
       \tPublic Key: {PK}
-      \tSecret Key: {keypair.secret}
+      \tSecret Key: {keypair.secret}\n
       """
       sys.exit(result)
 

@@ -4,8 +4,6 @@ from stellar_sdk.exceptions import *
 from pprint import pprint
 from globals import *
 
-HORIZON_INST = "https://horizon.stellar.org"
-server = Server(HORIZON_INST)
 disclaimer = """
 Use this script to revoke master keypair access while adding high threshold signers.
 
@@ -36,6 +34,7 @@ See https://developers.stellar.org/docs/encyclopedia/signatures-multisig.
 
 If you have any doubts or concerns, do not proceed with running this script.
 """
+server = Server("https://horizon.stellar.org")
 
 def main():
   if getINPUT(f"{disclaimer}\nDo you agree with the terms? (Y/n): ") != "Y":

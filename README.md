@@ -1,24 +1,24 @@
-# Vanity Stellar Public Key Generator
-
-This repository contains a Python script named `XLMgenerateVanityPublicKey.py` that generates a vanity Stellar public key. The script inserts a given vanity phrase into a random Stellar public key and tries different checksum digits to form a valid public key.
+# Vanity Stellar Address Toolbox
 
 ## Requirements
 
 - Python 3.x
-- `stellar_sdk` library (install using `pip install stellar_sdk`)
+- `stellar_sdk` library
 
 ## Usage
 
 1. Run the script by executing the following command:
 
 ```bash
-python3 XLMgenerateVanityPublicKey.py
+python3 generateVanity{DesiredType}.py
 ```
 
-2. Type your desired phrase and press Enter.
+2. Enter your desired inputs.
 
 3. View the result.
 
 ## Disclaimer
 
-This script is for demonstration purposes only. Generating vanity public keys and using them for real-world applications can have security implications. Always exercise caution and follow best practices when working with cryptographic keys. The script focuses solely on finding a valid public key with the given phrase and does not retrieve or handle the corresponding private key. Use the generated vanity public key responsibly and avoid using it in production or sensitive environments.
+This script is for demonstration purposes only. Generating vanity public keys and using them for real-world applications can have security implications. Always exercise caution and follow best practices when working with cryptographic keys. The script focuses solely on finding valid keys for given vanity phrases. Use vanity keys responsibly and avoid them in production or sensitive environments. 
+
+It is highly recommended that you add other non-vanity hardware signers on Stellar. Then set the master weight of any vanity accounts generated to zero. An example of how to do this is provided in `configureVanitySigners.py` and is provided without amy warrenty or representations.

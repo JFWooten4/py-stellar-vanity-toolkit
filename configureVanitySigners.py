@@ -40,7 +40,7 @@ If you have any doubts or concerns, do not proceed with running this script.
 def main():
   if getINPUT(f"{disclaimer}\nDo you agree with the terms? (Y/n): ") != "Y":
     sys.exit("User cancelled.")
-  secretKey = getINPUT("Enter master secret key: ")
+  secretKey = getINPUT("Enter vanity account secret key: ")
   try:
     masterKeypair = Keypair.from_secret(secretKey)
   except Ed25519SecretSeedInvalidError:

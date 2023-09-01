@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from stellar_sdk import Network, Signer, Server, TransactionBuilder
 from stellar_sdk.exceptions import *
 from pprint import pprint

@@ -1,5 +1,7 @@
 from globals import *
 
+clean = 49 * " "
+
 def main():
   try:
     # Inputs #
@@ -19,7 +21,7 @@ def main():
     prefix = f"G{prefix}"
     
     # Main Keygen #
-    partials = getINPUT("Would you like partial matches? (Y/n): ") == "Y"
+    partials = getINPUT("Show partial matches? (Y/n): ") == "Y"
     print(approxSearchTime)
     startTime = time.time()
     n = 0
@@ -41,10 +43,12 @@ def main():
       if not partials: continue
       if searchingMoreForPrefix:
         if not prefixMatch: continue
+        partial = f"{clean}—{PK[-6:]}"
       else:
         if not suffixMatch: continue
+        partial = f"{clean}{PK[:6]}—"
       partialMatch = [
-        "\r Partial match:                  ",
+        f"\r Partial Fit: {partial}",
         f"\n  Public Key: {PK}",
         f"\n  Secret Key: {keypair.secret}\n"
       ]

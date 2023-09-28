@@ -35,7 +35,7 @@ def main():
       suffixMatch = PK.endswith(suffix)
       if prefixMatch and suffixMatch:
         result = f"""\n
-        \tKeypair found in {n} attempts:
+        \tKeypair found in {n:,} attempts:
         \tPublic Key: {PK}
         \tSecret Key: {keypair.secret}\n
         """
@@ -65,12 +65,12 @@ def validateSearchSpan(totalInputLen):
     case 6:
       return "Be advised: >2 hrs to compute."
     case 7:
-      return "Be advised: >5 hrs to compute."
+      return "Be advised: >10 hrs to compute."
     case 8:
-      return "Be advised: >16 hrs to compute."
+      return "Be advised: >30 hrs to compute."
     case 9:
-      return "Be advised: >2 days to compute."
+      return "Be advised: >3 days to compute."
     case 10:
-      return "Be advised: >1 week to compute."
+      return "Be advised: >9 days to compute."
 
 print(main())
